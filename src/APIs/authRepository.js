@@ -1,13 +1,22 @@
+// import {UATRepository} from './Repository';
+
+// const singup = "signupWithPassword"
+
+// export default {
+//   Registration(payload) {
+//     return UATRepository.post(transformRoute(singup), payload);
+//   },
+// };
+
+// const transformRoute = (route) => {
+//   return `/api/auth/${route}`;
+// };
 import {UATRepository} from './Repository';
 
-const singup = "signupWithPassword"
+const signupRoute = 'signupWithPassword';
 
-export default {
-  Registration(payload) {
-    return UATRepository.post(transformRoute(singup), payload);
-  },
-};
+const Registration = payload =>
+  UATRepository.post(transformRoute(signupRoute), payload);
 
-const transformRoute = (route) => {
-  return `/api/auth/${route}`;
-};
+export default Registration;
+const transformRoute = route => `/api/auth/${route}`;
